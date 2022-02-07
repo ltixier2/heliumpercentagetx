@@ -1,5 +1,5 @@
 # - *- coding: utf- 8 - *-
-#chargement des dependances.
+#loading dependencies.
 from pycoingecko import CoinGeckoAPI
 cg = CoinGeckoAPI()
 import pandas as pd
@@ -18,10 +18,10 @@ os.environ['HELIUM_WALLET_PASSWORD'] = 'password of your wallet'
 cg.get_price(ids='helium', vs_currencies='eur')
 valeur = cg.get_price(ids='helium', vs_currencies='eur')['helium']
 taux = valeur['eur']
-#test connexion pour avoir le prix du moment
+#test to have current price in eur
 print(taux)
 
-#definitions des periodes de date
+#definition of dates.
 now = datetime.today()
 #before_yesterday = int(day)-2
 yesterday = datetime.today() - timedelta(1)
@@ -55,11 +55,11 @@ df_hs.timestamp = pd.to_datetime(df_hs.timestamp)
 df_hs.timestamp = df_hs.timestamp.apply(lambda a: datetime.strftime(a,"%Y-%m-%d %H:%M:%S"))
 df_hs['amount'] = df_hs['amount']/100000000
 df_hs['Montant en Euro'] = df_hs['amount']*taux
-df_hs["description"] = 'revenue de minage'
-df_hs[['timestamp','amount','Montant en Euro','description']]
+df_hs["description"] = 'mining revenue'
+df_hs[['timestamp','amount','Amount in Euro','description']]
 df_hs[df_hs['timestamp'].between(yesterday_complete,today)]
-#df_hs[['timestamp','amount','Montant en Euro','description']].to_excel('revenue_minage '+today+'.xls')
-df_hs[['timestamp','amount','Montant en Euro','description']]
+#df_hs[['timestamp','amount','Amount in Euro','description']].to_excel('mining_revenue '+today+'.xls')
+df_hs[['timestamp','amount','Amount in Euro','description']]
 #df_hs['timestamp']
 gains = df_hs.amount.sum()
 gainsHS= gains*0.4
