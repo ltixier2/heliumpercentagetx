@@ -11,7 +11,7 @@ import os
 import subprocess
 import sys
 
-
+path_to_wallet_cli = './helium-wallet-rs/bin/'
 hotSpotAddress = 'address of the hotspot'
 wallet_tosend = 'fill with wallet of address'
 os.environ['HELIUM_WALLET_PASSWORD'] = 'password of your wallet'
@@ -69,6 +69,6 @@ gainsMicha= gains*0.4
 gainsMicha = round(gainsMicha,7)
 print(gainsMicha)
 commande = "pay one "+str(wallet_tosend)+" "+str(gainsMicha)
-fullcommnand= "/mnt/data/helium-wallet-rs/bin/helium-wallet "+commande
+fullcommnand= path_to_wallet_cli+"helium-wallet "+commande
 print(fullcommnand)
 pid=os.system(fullcommnand)
