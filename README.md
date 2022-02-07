@@ -4,6 +4,7 @@ install with pip the required libraries : pandas, coingecko-api
 
 This script permit to send automatically 40% of earned token to a dedicated wallet.
 change values : 
+path_to_wallet_cli = './helium-wallet-rs/bin/'
 hotSpotAddress = 'address of the hotspot'
 wallet_tosend = 'fill with wallet of address'
 os.environ['HELIUM_WALLET_PASSWORD'] = 'password of your wallet'
