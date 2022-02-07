@@ -10,3 +10,6 @@ os.environ['HELIUM_WALLET_PASSWORD'] = 'password of your wallet'
 
 and if you want to give more HNT to the destination wallet change value : 
 gainsMicha= gains*0.4
+
+with this version nothing is leaving you must add -- commit at the end like this : 
+fullcommnand= "/mnt/data/helium-wallet-rs/bin/helium-wallet "+commande + ' --commit'
