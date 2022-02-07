@@ -10,7 +10,7 @@ from datetime import datetime, timedelta
 import os
 import subprocess
 import sys
-
+os.chdir("path to binary")
 path_to_wallet_cli = './helium-wallet-rs/bin/'
 hotSpotAddress = 'address of the hotspot'
 wallet_tosend = 'fill with wallet of address'
@@ -58,7 +58,7 @@ df_hs['Montant en Euro'] = df_hs['amount']*taux
 df_hs["description"] = 'revenue de minage'
 df_hs[['timestamp','amount','Montant en Euro','description']]
 df_hs[df_hs['timestamp'].between(yesterday_complete,today)]
-df_hs[['timestamp','amount','Montant en Euro','description']].to_excel('revenue_minage '+today+'.xls')
+#df_hs[['timestamp','amount','Montant en Euro','description']].to_excel('revenue_minage '+today+'.xls')
 df_hs[['timestamp','amount','Montant en Euro','description']]
 #df_hs['timestamp']
 gains = df_hs.amount.sum()
