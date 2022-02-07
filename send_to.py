@@ -63,7 +63,7 @@ df_hs[['timestamp','amount','Montant en Euro','description']]
 #df_hs['timestamp']
 gains = df_hs.amount.sum()
 gainsHS= gains*0.4
-gainsHS = round(gainsMicha,7)
+gainsHS = round(gainsHS,7)
 print(gainsHS)
 commande = "pay one "+str(wallet_tosend)+" "+str(gainsHS)
 fullcommnand= path_to_wallet_cli+"helium-wallet "+commande
