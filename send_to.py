@@ -62,10 +62,10 @@ df_hs[df_hs['timestamp'].between(yesterday_complete,today)]
 df_hs[['timestamp','amount','Montant en Euro','description']]
 #df_hs['timestamp']
 gains = df_hs.amount.sum()
-gainsMicha= gains*0.4
-gainsMicha = round(gainsMicha,7)
-print(gainsMicha)
-commande = "pay one "+str(wallet_tosend)+" "+str(gainsMicha)
+gainsHS= gains*0.4
+gainsHS = round(gainsMicha,7)
+print(gainsHS)
+commande = "pay one "+str(wallet_tosend)+" "+str(gainsHS)
 fullcommnand= path_to_wallet_cli+"helium-wallet "+commande
 print(fullcommnand)
 pid=os.system(fullcommnand)
